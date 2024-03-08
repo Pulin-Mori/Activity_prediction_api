@@ -8,7 +8,7 @@ trained_model = pickle.load(open("model.pkl","rb"))
 
 @app.route('/')
 def home():
-    return "Hello World"
+    return jsonify({"Hello World":"1"})
 
 @app.route('/predict', methods = ['GET','POST'])
 def predict():
