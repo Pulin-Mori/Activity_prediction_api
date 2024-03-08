@@ -4,7 +4,7 @@ import pickle
 
 app=Flask(__name__)
 
-model = pickle.load(open("model.pkl","rb"))
+trained_model = pickle.load(open("model.pkl","rb"))
 
 @app.route('/')
 def home():
@@ -20,7 +20,7 @@ def predict():
     az = request.form.get('Acc_z')
 
     input = np.array([[gx,gy,gz,ax,ay,az]])
-    result = model.predict(input)
+    result = trained_model.predict(input).tolist()[0]
 
     return jsonify({"Activity":str(result)})
 
