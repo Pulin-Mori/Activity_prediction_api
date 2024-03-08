@@ -6,11 +6,11 @@ app=Flask(__name__)
 
 model = pickle.load(open("model.pkl","rb"))
 
-"""@app.route('/')
+@app.route('/')
 def home():
-    return "Hello WorldD"""
+    return "Hello World"
 
-@app.route('/', methods = ['POST'])
+@app.route('/predict', methods = ['POST'])
 def predict():
     result=0
     gx = request.form.get('Gyr_x')
