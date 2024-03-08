@@ -10,9 +10,8 @@ model = pickle.load(open("model.pkl","rb"))
 def home():
     return "Hello World"
 
-@app.route('/predict', methods = ['POST'])
+@app.route('/predict', methods = ['GET','POST'])
 def predict():
-    result=0
     gx = request.form.get('Gyr_x')
     gy = request.form.get('Gyr_y')
     gz = request.form.get('Gyr_z')
