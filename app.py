@@ -19,7 +19,7 @@ def home():
     input = np.array([[gx,gy,gz,ax,ay,az]])
     result = trained_model.predict(input).tolist()[0]
 
-    return jsonify({"Activity":str(result)})
+    return jsonify({"Activity":str(result),"ax":str(ax)})
 
 @app.route('/predict', methods = ['GET','POST'])
 def predict():
