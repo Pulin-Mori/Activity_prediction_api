@@ -18,8 +18,10 @@ def home():
 
     input = np.array([[gx,gy,gz,ax,ay,az]])
     result = trained_model.predict(input).tolist()[0]
-
-    return jsonify({"Activity":str(result),"ax":str(ax)})
+    
+    temp={0:'LAYING',1:'SITTING',2:'STANDING',3:'WALKING',4:'WALKING_DOWNSTAIRS',5:'WALKING_UPSTAIRS'}
+    activity = temp.get(result)
+    return jsonify({"Activity":str(activity),"ax":str(ax)})
 
 if __name__=='__main__':
     app.run(debug=True)
