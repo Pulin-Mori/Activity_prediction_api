@@ -21,7 +21,7 @@ def home():
     
     temp={0:'LAYING',1:'SITTING',2:'STANDING',3:'WALKING',4:'WALKING_DOWNSTAIRS',5:'WALKING_UPSTAIRS'}
     activity = temp.get(result)
-    return jsonify({"Activity":str(activity),"ax":str(ax)})
+    return jsonify({"Activity":str(activity)})
 
 if __name__=='__main__':
     app.run(debug=True)
