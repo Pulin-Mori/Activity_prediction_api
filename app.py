@@ -8,6 +8,7 @@ trained_model = pickle.load(open("model3.pkl","rb"))
 
 @app.route('/')
 def home():
+    # return jsonify({"Hello World":"1"})
     ax = request.args.get("Acc_x")
     ay = request.args.get("Acc_y")
     az = request.args.get("Acc_z")
