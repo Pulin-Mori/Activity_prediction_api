@@ -19,7 +19,7 @@ def home():
     gry = request.args.get("Gra_y")
     grz = request.args.get("Gra_z")
 
-    input = np.array([[ax,ay,az,grx,gry,grz,gx,gy,gz]])
+    input = np.array([[ax,ay,az,gx,gy,gz,grx,gry,grz]])
     #input = np.array([[ax,ay,az,gz,gy,gx]])
     result = trained_model.predict(input).tolist()[0]
     
