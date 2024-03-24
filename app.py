@@ -21,12 +21,12 @@ def home():
 
     try:
         # Convert string values to float
-        ax = float(ax_str)
-        ay = float(ay_str)
-        az = float(az_str)
-        gx = float(gx_str)
-        gy = float(gy_str)
-        gz = float(gz_str)
+        ax = float(ax)
+        ay = float(ay)
+        az = float(az)
+        gx = float(gx)
+        gy = float(gy)
+        gz = float(gz)
 
         input = np.array([[ax,ay,az,gx,gy,gz]])
         #input = np.array([[ax,ay,az,gz,gy,gx]])
