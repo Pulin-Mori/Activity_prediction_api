@@ -4,7 +4,7 @@ import pickle
 
 app=Flask(__name__)
 
-trained_model = pickle.load(open("model5.pkl","rb"))
+trained_model = pickle.load(open("model6.pkl","rb"))
 
 @app.route('/')
 def home():
@@ -19,11 +19,11 @@ def home():
     gry = float(request.args.get("Gra_y"))
     grz = float(request.args.get("Gra_z"))
 
-    input = np.array([[ax,ay,az,gx,gy,gz,grx,gry,grz]])
+    input = np.array([[ax,ay,az,gx,gy,gz]])
     #input = np.array([[ax,ay,az,gz,gy,gx]])
     result = trained_model.predict(input).tolist()[0]
     
-    temp={0:'LAYING',1:'SITTING',2:'STANDING',3:'WALKING',4:'WALKING_DOWNSTAIRS',5:'WALKING_UPSTAIRS'}
+    temp={0:'Bike',1:'Sit',2:'Stairsdown',3:'Stairsup',4:'Stand',5:'Walk',6:'Unknow Activity'}
     activity = temp.get(result)
     return jsonify({"Activity":str(activity)})
 
