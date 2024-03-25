@@ -29,7 +29,6 @@ def home():
         gz = float(gz)
 
         input = np.array([[ax,ay,az,gx,gy,gz]])
-        #input = np.array([[ax,ay,az,gz,gy,gx]])
         result = trained_model.predict(input).tolist()[0]
     
         temp={0:'Bike',1:'Sit',2:'Stairsdown',3:'Stairsup',4:'Stand',5:'Walk',6:'Unknow Activity'}
